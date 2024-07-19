@@ -1,0 +1,9 @@
+import React = require('react');
+import { createRoot } from 'react-dom/client';
+import { App } from './app/App';
+
+import './style.css';
+
+const container = document.getElementById('my-react-app');
+const root = createRoot(container!);
+root.render(<App />);

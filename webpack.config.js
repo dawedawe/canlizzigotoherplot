@@ -6,8 +6,7 @@ const { runtime } = require('webpack');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/index.js',
-        print: './src/print.js',
+        index: './src/index.tsx',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -15,7 +14,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Development',
+            template: path.join(__dirname, 'src', 'index.html'),
+            filename: 'index.html'
         }),
     ],
     output: {
@@ -29,6 +29,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
@@ -37,5 +42,8 @@ module.exports = {
                 type: 'asset/resource',
             },
         ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
