@@ -2,7 +2,11 @@
     "cal": [
         {
             "date": "2024-07-21",
-            "name": "Test Event"
+            "name": "Test Event in the past"
+        },
+        {
+            "date": "2024-07-22",
+            "name": "Test Event today"
         },
         {
             "date": "2024-08-02",

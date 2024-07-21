@@ -23,7 +23,8 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
         fetchCalData();
     }, []);
 
-    let today = new Date();
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
     let todaysEntries = calEntries.filter((entry) => {
         let entryDate = new Date(entry.date);
         if (today.toDateString() === entryDate.toDateString()) {
@@ -32,6 +33,38 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
         return false;
     });
 
+    let next3Entries = calEntries.filter((entry) => {
+        let entryDate = new Date(entry.date);
+        entryDate.setHours(0, 0, 0, 0);
+        if (today < entryDate) {
+            console.log("today:", today, "entryDate:", entryDate);
+            return true;
+        }
+        return false;
+    }).slice(0, 3);
+
+    let next3EntriesComponent = () => {
+        if (next3Entries.length > 0) {
+            return (
+                <div className='next-three'>
+                    <h2>Upcoming events</h2>
+                    {
+                        next3Entries.map((entry, index) => (
+                            <div key={index}>
+                                <p>{entry.name} ({entry.date})</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            );
+        } else {
+            return (
+                <div className='next-three'>
+                    <h2>No upcoming events</h2>
+                </div>
+            );
+        }
+    };
 
     let component = () => {
         if (todaysEntries.length > 0) {
@@ -45,11 +78,15 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
                             </div>
                         ))
                     }
+                    {next3EntriesComponent()}
                 </div>
             );
         } else {
             return (
-                <p>Looks good. No stadium events today.</p>
+                <div>
+                    <p>Looks good. No stadium events today.</p>
+                    {next3EntriesComponent()}
+                </div>
             );
         }
     };
