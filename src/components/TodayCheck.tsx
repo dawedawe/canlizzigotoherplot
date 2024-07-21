@@ -1,37 +1,60 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useState, useEffect } from 'react';
 import React = require('react');
+import { Cal, CalEntry } from '../types/CalEntry'
 
-const check = () => {
-    // a function that fetches a website from a url
-    let url = 'https://www.function-type.de';
-    fetch(url).then(res => {
-        if (res.ok) {
-            console.log(res.body);
-        } else {
-            console.log('Error');
-        }
-    });
-}
-
+const CalData = require('../cal.json');
 
 const TodayCheck: FunctionComponent = (): ReactElement => {
-    // check();
+    const [calEntries, setCalEntries] = useState<CalEntry[]>([]);
+
+    useEffect(() => {
+        const fetchCalData = async () => {
+            try {
+                const response = await fetch(CalData);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data: Cal = await response.json();
+                setCalEntries(data.cal);
+            } catch (error) {
+                console.error("Fetching error:", error);
+                setCalEntries([]);
+            }
+        };
+
+        fetchCalData();
+    }, []);
+
     let today = new Date();
+    let todaysEntries = calEntries.filter((entry) => {
+        let entryDate = new Date(entry.date);
+        if (today.toDateString() === entryDate.toDateString()) {
+            return true;
+        }
+        return false;
+    });
+
+
     let component = () => {
-        if (today.getSeconds() % 2 === 0) {
+        if (todaysEntries.length > 0) {
             return (
-                <p>She can because even</p>
+                <div>
+                    <p>There might be traffic because of</p>
+                    {
+                        todaysEntries.map((entry, index) => (
+                            <div key={index}>
+                                <p>{entry.name} ({entry.date})</p>
+                            </div>
+                        ))
+                    }
+                </div>
             );
         } else {
             return (
-                <p>She can't because odd</p>
+                <p>Looks good. No stadium events today.</p>
             );
         }
     };
 
-    return (
-        component()
-    );
+    return component();
 };
 
 export { TodayCheck };

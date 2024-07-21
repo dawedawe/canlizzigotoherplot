@@ -1,0 +1,24 @@
+{
+    "cal": [
+        {
+            "date": "2024-07-21",
+            "name": "Test Event"
+        },
+        {
+            "date": "2024-08-02",
+            "name": "1. FC Köln – Hamburger SV"
+        },
+        {
+            "date": "2024-08-24",
+            "name": "1. FC Köln – Eintracht Braunschweig"
+        },
+        {
+            "date": "2024-09-14",
+            "name": "1. FC Köln – 1. FC Magdeburg"
+        },
+        {
+            "date": "2024-09-28",
+            "name": "1. FC Köln – Karlsruher SC"
+        }
+    ]
+}

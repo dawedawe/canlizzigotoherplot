@@ -6,8 +6,7 @@ const App: FunctionComponent = (): ReactElement => {
 
     return (
         <main>
-            <h1>My React App!</h1>
-            <p>This is a simple React app.</p>
+            <h1>Can Lizzi go to her plot today?</h1>
             <TodayCheck />
         </main>
     );
