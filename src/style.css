@@ -8,11 +8,12 @@ body {
     align-content: center;
 }
 
-p {
-    font-size: large;
-}
-
 .next-three {
     background-color: yellow;
+    padding: 10px;
+}
+
+.traffic-today {
+    background-color: red;
     padding: 10px;
 }

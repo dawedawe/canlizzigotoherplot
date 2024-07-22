@@ -36,21 +36,22 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
     let component = () => {
         if (todaysEntries.length > 0) {
             return (
-                <div>
-                    <p>There might be traffic because of</p>
+                <section className='traffic-today'>
+                    <h2>There might be traffic :(</h2>
                     {
                         todaysEntries.map((entry, index) => (
                             <div key={index}>
-                                <p>{entry.name} ({entry.date})</p>
+                                <h3>{entry.name} ({entry.date})</h3>
                             </div>
                         ))
                     }
-                </div>
+                </section>
             );
         } else {
             return (
                 <div>
-                    <p>Looks good. No stadium events today.</p>
+                    <h2>Looks good :)</h2>
+                    <h3>No stadium events today</h3>
                 </div>
             );
         }

@@ -25,7 +25,7 @@ const Upcoming: FunctionComponent = (): ReactElement => {
 
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    
+
     let next3Entries = calEntries.filter((entry) => {
         let entryDate = new Date(entry.date);
         entryDate.setHours(0, 0, 0, 0);
@@ -42,9 +42,7 @@ const Upcoming: FunctionComponent = (): ReactElement => {
                 <div className='next-three'>
                     <h2>Upcoming events</h2>
                     {next3Entries.map((entry, index) => (
-                        <div key={index}>
-                            <p>{entry.date} ({new Date(entry.date).toLocaleDateString('en-US', { weekday: 'long' })}): {entry.name}</p>
-                        </div>
+                        <h3>{entry.date} ({new Date(entry.date).toLocaleDateString('en-US', { weekday: 'long' })}): {entry.name}</h3>
                     ))}
                 </div>
             );
