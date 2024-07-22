@@ -4,7 +4,7 @@ import { Cal, CalEntry } from '../types/CalEntry'
 
 const CalData = require('../cal.json');
 
-const TodayCheck: FunctionComponent = (): ReactElement => {
+const Upcoming: FunctionComponent = (): ReactElement => {
     const [calEntries, setCalEntries] = useState<CalEntry[]>([]);
 
     useEffect(() => {
@@ -25,21 +25,24 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
 
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    let todaysEntries = calEntries.filter((entry) => {
+    
+    let next3Entries = calEntries.filter((entry) => {
         let entryDate = new Date(entry.date);
-        if (today.toDateString() === entryDate.toDateString()) {
+        entryDate.setHours(0, 0, 0, 0);
+        if (today < entryDate) {
+            console.log("today:", today, "entryDate:", entryDate);
             return true;
         }
         return false;
-    });
+    }).slice(0, 3);
 
     let component = () => {
-        if (todaysEntries.length > 0) {
+        if (next3Entries.length > 0) {
             return (
-                <div>
-                    <p>There might be traffic because of</p>
+                <div className='next-three'>
+                    <h2>Upcoming events</h2>
                     {
-                        todaysEntries.map((entry, index) => (
+                        next3Entries.map((entry, index) => (
                             <div key={index}>
                                 <p>{entry.name} ({entry.date})</p>
                             </div>
@@ -49,8 +52,8 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
             );
         } else {
             return (
-                <div>
-                    <p>Looks good. No stadium events today.</p>
+                <div className='next-three'>
+                    <h2>No upcoming events</h2>
                 </div>
             );
         }
@@ -59,4 +62,4 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
     return component();
 };
 
-export { TodayCheck };
+export { Upcoming };
