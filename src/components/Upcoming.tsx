@@ -41,16 +41,18 @@ const Upcoming: FunctionComponent = (): ReactElement => {
                 <div className='next-three'>
                     <h2>Upcoming events</h2>
                     <table>
-                        {next3Entries.map((entry, index) => (
-                            <tr key={index}>
-                                <td className='date-column'>
-                                    <h3>{entry.date} {new Date(entry.date).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
-                                </td>
-                                <td className='event-column'>
-                                    <h3>{entry.name}</h3>
-                                </td>
-                            </tr>
-                        ))}
+                        <tbody>
+                            {next3Entries.map((entry, index) => (
+                                <tr key={index}>
+                                    <td className='date-column'>
+                                        <h3>{entry.date} {new Date(entry.date).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
+                                    </td>
+                                    <td className='event-column'>
+                                        <h3>{entry.name}</h3>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             );
