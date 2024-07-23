@@ -30,7 +30,6 @@ const Upcoming: FunctionComponent = (): ReactElement => {
         let entryDate = new Date(entry.date);
         entryDate.setHours(0, 0, 0, 0);
         if (today < entryDate) {
-            console.log("today:", today, "entryDate:", entryDate);
             return true;
         }
         return false;
