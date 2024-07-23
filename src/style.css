@@ -17,3 +17,19 @@ body {
     background-color: red;
     padding: 10px;
 }
+
+table {
+    display: grid;
+    justify-content: center;
+    padding: 0;
+}
+
+.date-column {
+    padding: 10px;
+    width: calc(100% / 3);
+}
+
+.event-column {
+    width: 300px;
+    padding: 10px;
+}
