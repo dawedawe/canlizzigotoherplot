@@ -4,6 +4,6 @@ import { App } from './app/App';
 
 import './style.css';
 
-const container = document.getElementById('my-react-app');
+const container = document.getElementById('lizzis-app');
 const root = createRoot(container!);
 root.render(<App />);
