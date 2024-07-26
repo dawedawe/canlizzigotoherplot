@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement, useState, useEffect } from 'react';
 import React = require('react');
-import { Cal, CalEntry } from '../types/CalEntry'
+import { Cal, CalEntry } from '../types/CalEntry';
 
 const CalData = require('../cal.json');
 
@@ -10,7 +10,8 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
     useEffect(() => {
         const fetchCalData = async () => {
             try {
-                const response = await fetch(CalData);
+                const cacheBuster = new Date().getTime();
+                const response = await fetch(`${CalData}?cb=${cacheBuster}`);
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data: Cal = await response.json();
                 setCalEntries(data.cal);

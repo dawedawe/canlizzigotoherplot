@@ -5,8 +5,12 @@
             "name": "Test Event in the past"
         },
         {
-            "date": "2024-07-22",
-            "name": "Test Event today"
+            "date": "2024-07-26",
+            "name": "Test Event Friday 26th"
+        },
+        {
+            "date": "2024-07-28",
+            "name": "Test Event Sunday 28th"
         },
         {
             "date": "2024-08-02",
