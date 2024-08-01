@@ -38,11 +38,11 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
         if (todaysEntries.length > 0) {
             return (
                 <section className='traffic-today'>
-                    <h2>There might be traffic :(</h2>
+                    <h1>There might be traffic :(</h1>
                     {
                         todaysEntries.map((entry, index) => (
                             <div key={index}>
-                                <h3>{entry.name} ({entry.date})</h3>
+                                <h2>{entry.name} ({entry.date})</h2>
                             </div>
                         ))
                     }
@@ -51,8 +51,8 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
         } else {
             return (
                 <div>
-                    <h2>Looks good :)</h2>
-                    <h3>No stadium events today</h3>
+                    <h1>Looks good :)</h1>
+                    <h2>No stadium events today</h2>
                 </div>
             );
         }
