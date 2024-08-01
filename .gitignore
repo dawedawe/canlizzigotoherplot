@@ -1,4 +1,6 @@
-node_modules
-lib
-dist
-.cache
+webpage/node_modules
+webpage/lib
+webpage/dist
+webpage/.cache
+scraper/target
+scraper/cal.json
