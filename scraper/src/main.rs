@@ -53,14 +53,15 @@ fn scrape_html(fragment: Html) -> Result<String, Box<dyn std::error::Error>> {
     }
 
     let json = serde_json::to_string(&cal)?;
-    return Ok(json);
+    Ok(json)
 }
 
 fn main() {
     let url = "https://www.rheinenergiestadion.de/termine";
-    let html = download_html(url).unwrap();
+    let html = download_html(url).expect("failed to download html");
     let fragment = Html::parse_fragment(&html);
-    let json = scrape_html(fragment).expect("failed to scrape the html");
-    let mut file = File::create("cal.json").unwrap();
-    file.write_all(json.as_bytes()).unwrap();
+    let json = scrape_html(fragment).expect("failed to scrape html");
+    let mut file = File::create("cal.json").expect("failed to create file");
+    file.write_all(json.as_bytes())
+        .expect("failed to write file");
 }
