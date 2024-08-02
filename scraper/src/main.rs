@@ -20,7 +20,7 @@ fn download_html(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     Ok(body)
 }
 
-fn scrape_html(fragment: Html) -> Result<String, Box<dyn std::error::Error>> {
+fn scrape_html(fragment: Html) -> Result<Cal, Box<dyn std::error::Error>> {
     let event_selector = scraper::Selector::parse("div.events_list_item")?;
 
     let event_details_selector = scraper::Selector::parse("div.events_list_item_text")?;
@@ -52,15 +52,16 @@ fn scrape_html(fragment: Html) -> Result<String, Box<dyn std::error::Error>> {
         cal.cal.push(e);
     }
 
-    let json = serde_json::to_string(&cal)?;
-    Ok(json)
+    Ok(cal)
 }
 
 fn main() {
     let url = "https://www.rheinenergiestadion.de/termine";
     let html = download_html(url).expect("failed to download html");
     let fragment = Html::parse_fragment(&html);
-    let json = scrape_html(fragment).expect("failed to scrape html");
+    let cal = scrape_html(fragment).expect("failed to scrape html");
+    println!("found {} events", cal.cal.len());
+    let json = serde_json::to_string(&cal).expect("failed to serialize");
     let mut file = File::create("cal.json").expect("failed to create file");
     file.write_all(json.as_bytes())
         .expect("failed to write file");
