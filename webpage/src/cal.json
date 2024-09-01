@@ -1,16 +1,12 @@
 {
     "cal": [
         {
-            "date": "2024-08-02",
-            "name": "1. FC Köln – Hamburger SV"
-        },
-        {
-            "date": "2024-08-24",
-            "name": "1. FC Köln – Eintracht Braunschweig"
-        },
-        {
             "date": "2024-09-14",
             "name": "1. FC Köln – 1. FC Magdeburg"
+        },
+        {
+            "date": "2024-09-25",
+            "name": "B2Run"
         },
         {
             "date": "2024-09-29",
@@ -19,6 +15,10 @@
         {
             "date": "2024-10-05",
             "name": "1. FC Köln – SSV Ulm 1846 Fußball"
+        },
+        {
+            "date": "2024-10-10",
+            "name": "#EffZEHN – Lukas Podolski ein letztes Mal in Rut un Wiess"
         },
         {
             "date": "2024-10-26",
