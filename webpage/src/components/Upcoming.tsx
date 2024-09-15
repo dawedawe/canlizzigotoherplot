@@ -49,7 +49,9 @@ const Upcoming: FunctionComponent = (): ReactElement => {
                                         <h2>{entry.date} {new Date(entry.date).toLocaleDateString('en-US', { weekday: 'long' })}</h2>
                                     </td>
                                     <td className='event-column'>
-                                        <h2>{entry.name}</h2>
+                                        <a href={entry.url}>
+                                            <h2>{entry.name}</h2>
+                                        </a>
                                     </td>
                                 </tr>
                             ))}
