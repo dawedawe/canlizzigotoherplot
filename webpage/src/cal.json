@@ -1,76 +1,99 @@
 {
     "cal": [
         {
-            "date": "2024-09-14",
-            "name": "1. FC Köln – 1. FC Magdeburg"
-        },
-        {
             "date": "2024-09-25",
-            "name": "B2Run"
+            "name": "B2Run",
+            "url": "https://www.rheinenergiestadion.de/events/b2run/"
         },
         {
             "date": "2024-09-29",
-            "name": "1. FC Köln – Karlsruher SC"
+            "name": "1. FC Köln - Karlsruher SC",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-paderborn/"
         },
         {
             "date": "2024-10-05",
-            "name": "1. FC Köln – SSV Ulm 1846 Fußball"
+            "name": "1. FC Köln - SSV Ulm 1846 Fußball",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-ssv-ulm/"
         },
         {
             "date": "2024-10-10",
-            "name": "#EffZEHN – Lukas Podolski ein letztes Mal in Rut un Wiess"
+            "name": "#EffZEHN – Lukas Podolski ein letztes Mal in Rut un Wiess",
+            "url": "https://www.rheinenergiestadion.de/events/podolski-ein-letztes-mal-in-rut-un-wiess/"
         },
         {
-            "date": "2024-10-26",
-            "name": "1. FC Köln – SC Paderborn"
+            "date": "2024-10-25",
+            "name": "1. FC Köln - SC Paderborn",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-sc-paderborn/"
+        },
+        {
+            "date": "2024-10-29",
+            "name": "1. FC Köln - Holstein Kiel",
+            "url": "https://www.rheinenergiestadion.de/events/viktoria-koeln-fcb/"
         },
         {
             "date": "2024-11-09",
-            "name": "1. FC Köln – SpVgg Greuther Fürth"
+            "name": "1. FC Köln - SpVgg Greuther Fürth",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-spvgg-greuther-fuerth/"
         },
         {
             "date": "2024-11-30",
-            "name": "1. FC Köln – Hannover 96"
+            "name": "1. FC Köln - Hannover 96",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-hannover-96/"
         },
         {
             "date": "2024-12-14",
-            "name": "1. FC Köln – 1. FC Union Berlin"
+            "name": "1. FC Köln - 1. FC Union Berlin",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fc-nuernberg/"
+        },
+        {
+            "date": "2024-12-23",
+            "name": "LOSS MER WEIHNACHTSLEEDER SINGE 2024",
+            "url": "https://www.rheinenergiestadion.de/events/loss-mer-weihnachtsleeder-singe-2024/"
         },
         {
             "date": "2025-01-18",
-            "name": "1. FC Köln – SV Elversberg"
+            "name": "1. FC Köln - SV Elversberg",
+            "url": "https://www.rheinenergiestadion.de/events/koeln-elversberg/"
         },
         {
             "date": "2025-02-08",
-            "name": "1. FC Köln – FC Schalke 04"
+            "name": "1. FC Köln - FC Schalke 04",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fc-schalke-04-2/"
         },
         {
             "date": "2025-02-22",
-            "name": "1. FC Köln – Fortuna Düsseldorf"
+            "name": "1. FC Köln - Fortuna Düsseldorf",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fortuna-duesseldorf/"
         },
         {
             "date": "2025-03-15",
-            "name": "1. FC Köln – SV Darmstadt 98"
+            "name": "1. FC Köln - SV Darmstadt 98",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-darmstadt/"
         },
         {
             "date": "2025-04-05",
-            "name": "1. FC Köln – Hertha BSC"
+            "name": "1. FC Köln - Hertha BSC",
+            "url": "https://www.rheinenergiestadion.de/events/fc-koeln-hertha-bsc/"
         },
         {
             "date": "2025-04-19",
-            "name": "1. FC Köln – Preußen Münster"
+            "name": "1. FC Köln - Preußen Münster",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-preussen-muenster/"
         },
         {
             "date": "2025-05-03",
-            "name": "1. FC Köln – SSV Jahn Regensburg"
+            "name": "1. FC Köln - SSV Jahn Regensburg",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-jahn-regensburg/"
         },
         {
             "date": "2025-05-18",
-            "name": "1. FC Köln – 1. FC Kaiserslautern"
+            "name": "1. FC Köln - 1. FC Kaiserslautern",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-kaiserslautern/"
         },
         {
-            "date": "2026-06-27",
-            "name": "Helene Fischer"
+            "date": "2026-06-26",
+            "name": "Helene Fischer",
+            "url": "https://www.rheinenergiestadion.de/events/helene-fischer/"
         }
     ]
 }
