@@ -42,7 +42,9 @@ const TodayCheck: FunctionComponent = (): ReactElement => {
                     {
                         todaysEntries.map((entry, index) => (
                             <div key={index}>
-                                <h2>{entry.name} ({entry.date})</h2>
+                                <a href={entry.url}>
+                                    <h2>{entry.name} ({entry.date})</h2>
+                                </a>
                             </div>
                         ))
                     }
