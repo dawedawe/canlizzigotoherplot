@@ -9,6 +9,7 @@ use std::hash::RandomState;
 use std::io::BufReader;
 use std::io::Write;
 use std::str::FromStr;
+use tokio::task::JoinHandle;
 
 #[derive(serde::Serialize, PartialEq, Eq, Hash)]
 struct Event {
@@ -22,10 +23,10 @@ struct Cal {
     cal: Vec<Event>,
 }
 
-fn download(url: &str) -> Result<String, Box<dyn std::error::Error>> {
+async fn download(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     println!("downloading {}", url);
-    let response = reqwest::blocking::get(url)?;
-    let body = response.text()?;
+    let response = reqwest::get(url).await?;
+    let body = response.text().await?;
     Ok(body)
 }
 
@@ -99,18 +100,26 @@ fn scrape_ical_links(fragment: &Html) -> Vec<&str> {
     ical_links.into_iter().collect()
 }
 
-fn get_events_from_ical_link(ical_url: &str) -> Vec<Event> {
-    let ical_content = download(ical_url).unwrap();
+async fn get_events_from_ical_link(ical_url: &str) -> Vec<Event> {
+    let ical_content = download(ical_url).await.unwrap();
     parse_ical(ical_content)
 }
 
-fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
+async fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
     let mut events: Vec<Event> = Vec::new();
 
-    ical_urls.into_iter().for_each(|url| {
-        let ical_events = get_events_from_ical_link(url);
-        ical_events.into_iter().for_each(|e| events.push(e));
-    });
+    let tasks: Vec<JoinHandle<Vec<Event>>> = ical_urls
+        .iter()
+        .map(|url| {
+            let url = url.to_string();
+            tokio::spawn(async move { get_events_from_ical_link(&url).await })
+        })
+        .collect();
+
+    for task in tasks {
+        let ical_events = task.await.unwrap();
+        events.extend(ical_events);
+    }
 
     events
 }
@@ -131,12 +140,13 @@ fn filter_events(events: Vec<Event>) -> Vec<Event> {
     future_events
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let url = "https://www.rheinenergiestadion.de/termine";
-    let html = download(url).expect("failed to download html");
+    let html = download(url).await.expect("failed to download html");
     let fragment = Html::parse_fragment(&html);
     let ical_links = scrape_ical_links(&fragment);
-    let ical_events = get_events_from_ical_links(ical_links);
+    let ical_events = get_events_from_ical_links(ical_links).await;
     let ical_events = filter_events(ical_events);
     ical_events
         .iter()
