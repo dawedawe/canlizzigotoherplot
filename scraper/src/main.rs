@@ -9,7 +9,6 @@ use std::hash::RandomState;
 use std::io::BufReader;
 use std::io::Write;
 use std::str::FromStr;
-use tokio::task::JoinHandle;
 
 #[derive(serde::Serialize, PartialEq, Eq, Hash)]
 struct Event {
@@ -106,20 +105,18 @@ async fn get_events_from_ical_link(ical_url: &str) -> Vec<Event> {
 }
 
 async fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
+    let mut join_set = tokio::task::JoinSet::new();
+
+    ical_urls.iter().for_each(|url| {
+        let url = url.to_string();
+        join_set.spawn(async move { get_events_from_ical_link(&url).await });
+    });
+
+    let events_from_tasks = join_set.join_all().await;
     let mut events: Vec<Event> = Vec::new();
-
-    let tasks: Vec<JoinHandle<Vec<Event>>> = ical_urls
-        .iter()
-        .map(|url| {
-            let url = url.to_string();
-            tokio::spawn(async move { get_events_from_ical_link(&url).await })
-        })
-        .collect();
-
-    for task in tasks {
-        let ical_events = task.await.unwrap();
-        events.extend(ical_events);
-    }
+    events_from_tasks.into_iter().for_each(|ee| {
+        events.extend(ee);
+    });
 
     events
 }
