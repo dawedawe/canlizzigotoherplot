@@ -1,49 +1,29 @@
 {
     "cal": [
         {
-            "date": "2024-10-25",
-            "name": "1. FC Köln - SC Paderborn",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-sc-paderborn/"
-        },
-        {
-            "date": "2024-10-29",
-            "name": "1. FC Köln - Holstein Kiel",
-            "url": "https://www.rheinenergiestadion.de/events/viktoria-koeln-fcb/"
-        },
-        {
-            "date": "2024-11-09",
-            "name": "1. FC Köln - SpVgg Greuther Fürth",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-spvgg-greuther-fuerth/"
-        },
-        {
-            "date": "2024-11-30",
-            "name": "1. FC Köln - Hannover 96",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-hannover-96/"
-        },
-        {
-            "date": "2024-12-14",
-            "name": "1. FC Köln - 1. FC Union Berlin",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fc-nuernberg/"
-        },
-        {
-            "date": "2024-12-23",
-            "name": "LOSS MER WEIHNACHTSLEEDER SINGE 2024",
-            "url": "https://www.rheinenergiestadion.de/events/loss-mer-weihnachtsleeder-singe-2024/"
-        },
-        {
-            "date": "2025-01-18",
+            "date": "2025-01-25",
             "name": "1. FC Köln - SV Elversberg",
             "url": "https://www.rheinenergiestadion.de/events/koeln-elversberg/"
         },
         {
-            "date": "2025-02-08",
+            "date": "2025-02-09",
             "name": "1. FC Köln - FC Schalke 04",
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fc-schalke-04-2/"
         },
         {
-            "date": "2025-02-22",
+            "date": "2025-02-23",
             "name": "1. FC Köln - Fortuna Düsseldorf",
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fortuna-duesseldorf/"
+        },
+        {
+            "date": "2025-02-27",
+            "name": "HarlekinDanz 2025",
+            "url": "https://www.rheinenergiestadion.de/events/harlekindanz2024/"
+        },
+        {
+            "date": "2025-03-09",
+            "name": "1. FC Köln Frauen - FC Bayern München",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-frauen-fc-bayern-muenchen/"
         },
         {
             "date": "2025-03-15",
@@ -61,6 +41,11 @@
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-preussen-muenster/"
         },
         {
+            "date": "2025-05-01",
+            "name": "DFB-Pokalfinale der Frauen",
+            "url": "https://www.rheinenergiestadion.de/events/dfb-pokalfinale-der-frauen-25/"
+        },
+        {
             "date": "2025-05-03",
             "name": "1. FC Köln - SSV Jahn Regensburg",
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-jahn-regensburg/"
@@ -69,6 +54,21 @@
             "date": "2025-05-18",
             "name": "1. FC Köln - 1. FC Kaiserslautern",
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-kaiserslautern/"
+        },
+        {
+            "date": "2025-07-12",
+            "name": "Kölner Creativ Sommer",
+            "url": "https://www.rheinenergiestadion.de/events/koelner-creativ-sommer/"
+        },
+        {
+            "date": "2025-09-04",
+            "name": "B2Run",
+            "url": "https://www.rheinenergiestadion.de/events/b2run/"
+        },
+        {
+            "date": "2025-12-23",
+            "name": "LOSS MER WEIHNACHTSLEEDER SINGE 2025",
+            "url": "https://www.rheinenergiestadion.de/events/loss-mer-weihnachtsleeder-singe-2025/"
         },
         {
             "date": "2026-06-26",
