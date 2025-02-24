@@ -9,6 +9,7 @@ use std::hash::RandomState;
 use std::io::BufReader;
 use std::io::Write;
 use std::str::FromStr;
+use std::time::Duration;
 
 #[derive(serde::Serialize, PartialEq, Eq, Hash)]
 struct Event {
@@ -26,6 +27,16 @@ async fn download(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     println!("downloading {}", url);
     let response = reqwest::get(url).await?;
     let body = response.text().await?;
+    Ok(body)
+}
+
+fn download_sync(
+    client: &reqwest::blocking::Client,
+    url: &str,
+) -> Result<String, Box<dyn std::error::Error>> {
+    println!("downloading {}", url);
+    let response = client.get(url).send()?;
+    let body = response.text()?;
     Ok(body)
 }
 
@@ -99,24 +110,34 @@ fn scrape_ical_links(fragment: &Html) -> Vec<&str> {
     ical_links.into_iter().collect()
 }
 
-async fn get_events_from_ical_link(ical_url: &str) -> Vec<Event> {
-    let ical_content = download(ical_url).await.unwrap();
+fn get_events_from_ical_link(ical_url: &str) -> Vec<Event> {
+    let client = reqwest::blocking::ClientBuilder::new()
+        .connect_timeout(Duration::from_secs(30))
+        .build()
+        .unwrap();
+    let ical_content = download_sync(&client, ical_url).unwrap();
     parse_ical(ical_content)
 }
 
-async fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
-    let mut join_set = tokio::task::JoinSet::new();
-
-    ical_urls.iter().for_each(|url| {
+fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
+    let (tx, rx) = std::sync::mpsc::channel();
+    for url in ical_urls {
         let url = url.to_string();
-        join_set.spawn(async move { get_events_from_ical_link(&url).await });
-    });
-
-    let events_from_tasks = join_set.join_all().await;
+        let tx_c = tx.clone();
+        std::thread::spawn(move || {
+            let events_of_u = get_events_from_ical_link(&url);
+            println!("got {} events from {}", events_of_u.len(), url);
+            tx_c.send(events_of_u)
+                .expect("expected channel send to succeed");
+            println!("send");
+        });
+    }
+    drop(tx);
     let mut events: Vec<Event> = Vec::new();
-    events_from_tasks.into_iter().for_each(|ee| {
-        events.extend(ee);
-    });
+    for evs in rx {
+        println!("rec {} events", evs.len());
+        events.extend(evs);
+    }
 
     events
 }
@@ -143,7 +164,7 @@ async fn main() {
     let html = download(url).await.expect("failed to download html");
     let fragment = Html::parse_fragment(&html);
     let ical_links = scrape_ical_links(&fragment);
-    let ical_events = get_events_from_ical_links(ical_links).await;
+    let ical_events = get_events_from_ical_links(ical_links);
     let ical_events = filter_events(ical_events);
     ical_events
         .iter()
