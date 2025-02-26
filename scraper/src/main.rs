@@ -1,7 +1,7 @@
 use ical::parser::Component;
-use jiff::civil::Date;
 use jiff::Timestamp;
 use jiff::Zoned;
+use jiff::civil::Date;
 use scraper::Html;
 use std::collections::HashSet;
 use std::fs::File;
