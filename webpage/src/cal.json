@@ -1,21 +1,6 @@
 {
     "cal": [
         {
-            "date": "2025-01-25",
-            "name": "1. FC Köln - SV Elversberg",
-            "url": "https://www.rheinenergiestadion.de/events/koeln-elversberg/"
-        },
-        {
-            "date": "2025-02-09",
-            "name": "1. FC Köln - FC Schalke 04",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fc-schalke-04-2/"
-        },
-        {
-            "date": "2025-02-23",
-            "name": "1. FC Köln - Fortuna Düsseldorf",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fortuna-duesseldorf/"
-        },
-        {
             "date": "2025-02-27",
             "name": "HarlekinDanz 2025",
             "url": "https://www.rheinenergiestadion.de/events/harlekindanz2024/"
@@ -54,6 +39,11 @@
             "date": "2025-05-18",
             "name": "1. FC Köln - 1. FC Kaiserslautern",
             "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-kaiserslautern/"
+        },
+        {
+            "date": "2025-07-02",
+            "name": "Kendrick Lamar & SZA",
+            "url": "https://www.rheinenergiestadion.de/events/kendrick-lamar/"
         },
         {
             "date": "2025-07-12",
