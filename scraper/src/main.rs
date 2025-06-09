@@ -63,7 +63,7 @@ fn parse_ical(s: String) -> Vec<Event> {
                 }
                 Err(_) => {
                     let date = Date::from_str(start_value)
-                        .expect("failed to parse Timestamp from start propery");
+                        .expect("failed to parse Timestamp from start property");
                     format!("{}", date.strftime("%Y-%m-%d"))
                 }
             };
@@ -149,7 +149,7 @@ fn filter_events(events: Vec<Event>) -> Vec<Event> {
         .into_iter()
         .filter(|event| {
             let date =
-                Date::from_str(&event.date).expect("failed to parse Timestamp from start propery");
+                Date::from_str(&event.date).expect("failed to parse Timestamp from start property");
             date >= current_date
         })
         .collect();
