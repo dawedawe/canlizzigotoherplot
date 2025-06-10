@@ -129,7 +129,6 @@ fn get_events_from_ical_links(ical_urls: Vec<&str>) -> Vec<Event> {
             println!("got {} events from {}", events_of_u.len(), url);
             tx_c.send(events_of_u)
                 .expect("expected channel send to succeed");
-            println!("send");
         });
     }
     drop(tx);
