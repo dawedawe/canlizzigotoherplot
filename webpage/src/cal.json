@@ -1,49 +1,9 @@
 {
     "cal": [
         {
-            "date": "2025-08-31",
-            "name": "1. FC Köln - SC Freiburg",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-sc-freiburg/"
-        },
-        {
-            "date": "2025-09-03",
-            "name": "B2Run",
-            "url": "https://www.rheinenergiestadion.de/events/b2run/"
-        },
-        {
-            "date": "2025-09-07",
-            "name": "FUSSBALL-LÄNDERSPIEL",
-            "url": "https://www.rheinenergiestadion.de/events/fussball-laenderspiel-3/"
-        },
-        {
-            "date": "2025-09-27",
-            "name": "1. FC Köln - VfB Stuttgart",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-vfb-stuttgart-3/"
-        },
-        {
-            "date": "2025-10-18",
-            "name": "1. FC Köln - FC Augsburg",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fc-augsburg-2/"
-        },
-        {
-            "date": "2025-11-01",
-            "name": "1. FC Köln - Hamburger SV",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-hamburger-sv-2/"
-        },
-        {
-            "date": "2025-11-22",
-            "name": "1. FC Köln - Eintracht Frankfurt",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-eintracht-frankfurt-2/"
-        },
-        {
-            "date": "2025-12-06",
-            "name": "1. FC Köln - FC St. Pauli",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-pauli/"
-        },
-        {
             "date": "2025-12-20",
             "name": "1. FC Köln - 1. FC Union Berlin",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-union/"
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fc-union-berlin/"
         },
         {
             "date": "2025-12-23",
@@ -52,8 +12,13 @@
         },
         {
             "date": "2026-01-14",
-            "name": "1. FC Köln - FC Bayern München",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-fc-bayern-muenchen/"
+            "name": "1. FC Köln - Bayern München",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-bayern-muenchen-3/"
+        },
+        {
+            "date": "2026-01-17",
+            "name": "1. FC Köln - 1. FSV Mainz 05",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fsv-mainz-05-2/"
         },
         {
             "date": "2026-06-27",
