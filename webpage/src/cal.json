@@ -1,24 +1,29 @@
 {
     "cal": [
         {
-            "date": "2025-12-20",
-            "name": "1. FC Köln - 1. FC Union Berlin",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fc-union-berlin/"
+            "date": "2026-03-07",
+            "name": "1. FC Köln - Borussia Dortmund",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-borussia-dortmund-2/"
         },
         {
-            "date": "2025-12-23",
-            "name": "LOSS MER WEIHNACHTSLEEDER SINGE 2025",
-            "url": "https://www.rheinenergiestadion.de/events/loss-mer-weihnachtsleeder-singe-2025/"
+            "date": "2026-03-21",
+            "name": "1. FC Köln - Borussia Mönchengladbach",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-borussia-moenchengladbach-3/"
         },
         {
-            "date": "2026-01-14",
-            "name": "1. FC Köln - Bayern München",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-bayern-muenchen-3/"
+            "date": "2026-04-11",
+            "name": "1. FC Köln - SV Werder Bremen",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-sv-werder-bremen/"
         },
         {
-            "date": "2026-01-17",
-            "name": "1. FC Köln - 1. FSV Mainz 05",
-            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-1-fsv-mainz-05-2/"
+            "date": "2026-04-25",
+            "name": "1. FC Köln - Bayer 04 Leverkusen",
+            "url": "https://www.rheinenergiestadion.de/events/1-fc-koeln-bayer-04-leverkusen-2/"
+        },
+        {
+            "date": "2026-06-26",
+            "name": "Helene Fischer - Zusatzshow",
+            "url": "https://www.rheinenergiestadion.de/events/helene-fischer-zusatzshow/"
         },
         {
             "date": "2026-06-27",
